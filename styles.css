@@ -1,0 +1,419 @@
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-color: #1e1e1e;
+    color: white;
+    padding: 20px;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Progress Bar */
+.progress-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 80%;
+    background-color: #444;
+    margin: 20px auto;
+    height: 25px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: #3f1313;
+    transition: width 0.15s ease-in-out;
+}
+
+#loading-text {
+    font-size: 50px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 10px;
+    margin-top: 200px;
+}
+
+/* Hide elements initially */
+#main-content, #letter-section {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+#main-content h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #ffcc00;
+    text-shadow: 0px 0px 10px rgba(255, 204, 0, 0.8), 0px 0px 20px rgba(255, 204, 0, 0.6);
+    animation: glowEffect 1.5s infinite alternate;
+    margin-bottom: 40px;
+    margin-top: 180px;
+    margin-bottom: 60px;
+}
+
+/* Glowing Animation */
+@keyframes glowEffect {
+    0% {
+        text-shadow: 0px 0px 10px rgba(255, 204, 0, 0.8);
+        transform: scale(1);
+    }
+    100% {
+        text-shadow: 0px 0px 20px rgba(255, 204, 0, 1);
+        transform: scale(1.02);
+    }
+}
+
+#main-content h1 {
+    animation: glowEffect 1.5s infinite alternate ease-in-out;
+}
+
+
+#main-content p {
+    font-size: 1.3rem; 
+    font-weight: 400;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px 50px; 
+    border-radius: 15px;
+    line-height: 1.8; 
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 0px 12px rgba(255, 204, 0, 0.2);
+    max-width: 700px;
+    width: 85%; 
+    text-align: center;
+
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    gap: 10px; 
+    
+    margin: 0px auto;
+    font-family: 'Poppins', sans-serif; 
+}
+
+/* Make the bold text (like "one year") stand out more */
+#main-content p strong {
+    font-size: 1.4rem; 
+    font-weight: 600;
+    color: #ffcc00; 
+}
+
+/* Extra: Add subtle animation */
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#main-content p {
+    animation: fadeInText 0.5s ease-in-out;
+}
+
+
+#main-content p:hover {
+    transform: scale(1.02);
+    border-color: rgba(255, 204, 0, 0.8);
+}
+
+#continue-btn {
+    background: linear-gradient(45deg, #ffcc00, #ffdd44);
+    color: black;
+    padding: 14px 30px;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
+    animation: pulseEffect 1.5s infinite alternate;
+    margin-top: 60px;
+}
+
+/* Subtle Hover Animation */
+#continue-btn:hover {
+    background: linear-gradient(45deg, #c59f23, #fce043);
+    transform: scale(1.05);
+}
+
+/* Pulse Animation */
+@keyframes pulseEffect {
+    from {
+        box-shadow: 0px 0px 8px rgba(255, 187, 0, 0.4);
+    }
+    to {
+        box-shadow: 0px 0px 15px rgb(247, 219, 63);
+    }
+}
+
+
+#main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    width: 100%;
+    animation: fadeInScale 0.6s ease-out;
+
+    margin-top: 0;
+    position: relative;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+button {
+    background-color: #ffcc00;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: none;
+    font-size: 18px;
+    margin-top: 0px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #fce043;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c2c2c;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+/* Achievements Grid */
+.achievements-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    padding: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+/* Individual Achievement Boxes */
+.achievement {
+    background-color: #3a3a3a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, background-color 0.3s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 200px;
+    width: 200px;
+}
+
+.achievement:hover {
+    background-color: #3f1313;
+    transform: scale(1.05);
+}
+
+/* Achievement Images */
+.achievement img {
+    width: 180px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Achievement Titles */
+.achievement h2 {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #2c2c2c;
+    padding: 25px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Title Styling */
+#achievement-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffcc00; /* Gold color for importance */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+}
+
+/* Image Styling */
+#achievement-image {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+    margin: 15px 0;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Description Styling */
+#achievement-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #dcdcdc;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px 20px;
+    border-radius: 8px;
+    max-width: 450px;
+    margin: 0 auto 15px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Extra Text Styling */
+#achievement-description em {
+    display: block;
+    font-size: 1rem;
+    color: #e9be4a; /* Soft red/pink for fun contrast */
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.close {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    transition: 0.3s ease-in-out;
+}
+
+.close:hover {
+    color: #ffcc00;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.modal-content {
+    animation: slideUp 0.4s ease-in-out;
+}
+
+
+h2{
+    font-size: 16px;
+    text-align: center;
+    margin: 20px 0 0 0;
+}
+
+#letter-section {
+    max-width: 800px;
+    margin: 30px auto;
+    background: linear-gradient(to bottom, #2c2c2c, #1e1e1e);
+    padding: 50px;
+    border-radius: 20px;
+    text-align: center;
+    font-family: 'Times New Roman', serif;
+    color: #f8f8f8;
+    border: 5px solid #ffcc00;
+    box-shadow: 0px 5px 20px rgba(255, 204, 0, 0.5);
+    position: relative;
+}
+
+#letter-section::before {
+    content: "🏆 Official Certificate 🏆";
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffcc00;
+    margin-bottom: 20px;
+}
+
+#letter-section p {
+    font-size: 1.4rem;
+    line-height: 2;
+    font-weight: 500;
+}
+
+#letter-section strong {
+    color: #ffcc00;
+    font-weight: bold;
+}
+
+.seal {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, #ffcc00, #aa8800);
+    color: black;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0px 0px 15px rgba(255, 204, 0, 0.8);
+}
+
+#view-achievements {
+    background: linear-gradient(to right, #ffcc00, #ffaa00);
+    color: black;
+    padding: 15px 30px;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 15px;
+    display: inline-block;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+#view-achievements:hover {
+    transform: scale(1.05);
+}

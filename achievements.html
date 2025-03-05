@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements Collection</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>🏆 Achievements Collection 🏆</h1>
+        <button onclick="window.location.href='index.html'">⇦</button>
+    </header>
+
+    <!-- Achievements Grid -->
+    <div class="achievements-container">
+        <div class="achievement" onclick="showAchievement('certified-survivor')">
+            <img src="achievements/oneyear.png" alt="Certified Jana Survivor">
+            <h2>Certified Jana Survivor</h2>
+        </div>
+
+        <div class="achievement" onclick="showAchievement('spotify-master')">
+            <img src="achievements/jany.png" alt="Banger Bestie">
+            <h2>Banger Bestie</h2>
+        </div>
+
+        <div class="achievement" onclick="showAchievement('chat-level')">
+            <img src="achievements/fire.png" alt="Chat Level Master">
+            <h2>Keyboard Warrior</h2>
+        </div>
+
+        <div class="achievement" onclick="showAchievement('contract-renewal')">
+            <img src="achievements/trapped.png" alt="Contract Renewal">
+            <h2>Contract Renewal</h2>
+        </div>
+
+        <div class="achievement" onclick="showAchievement('patience-master')">
+            <img src="achievements/patience.png" alt="Master of Patience">
+            <h2>King of Patience</h2>
+        </div>
+
+        <div class="achievement" onclick="showAchievement('jokester')">
+            <img src="achievements/jokester.png" alt="Jokester">
+            <h2>Jokester</h2>
+        </div>
+
+        <div class="achievement" onclick="showAchievement('riddle-master')">
+            <img src="achievements/riddle.png" alt="Riddle Master">
+            <h2>Riddle Master</h2>
+        </div>
+
+        <div class="achievement" onclick="showAchievement('sole-mates')">
+            <img src="achievements/sole-mate.png" alt="Sole-Mates">
+            <h2>Sole-Mates</h2>
+        </div>
+
+        <div class="achievement" onclick="showAchievement('pookie-award')">
+            <img src="achievements/Pookie Award.png" alt="Pookie Award">
+            <h2>Pookie Award</h2>
+        </div>
+
+        <div class="achievement" onclick="showAchievement('nocturnal-navigator')">
+            <img src="achievements/POWERED BY.png" alt="Nocturnal Navigator">
+            <h2>Nocturnal Navigator</h2>
+        </div>
+
+        <div class="achievement" onclick="showAchievement('mind-reader')">
+            <img src="achievements/mind.png" alt="Mind Reader">
+            <h2>Mind Reader</h2>
+        </div>
+
+        <div class="achievement" onclick="showAchievement('reality-check')">
+            <img src="achievements/Impulse.png" alt="Denys Reality Check">
+            <h2>Impulse Control</h2>
+        </div>
+
+        <div class="achievement" onclick="showAchievement('denyflix')">
+            <img src="achievements/DENYFLIX.png" alt="Denyflix Originals">
+            <h2>Denyflix Originals</h2>
+        </div>
+
+        <div class="achievement" onclick="showAchievement('attention-to-detail')">
+            <img src="achievements/I SEE EVERYTHING.png" alt="Attention to Detail">
+            <h2>Attention to Detail</h2>
+        </div>
+
+        <div class="achievement" onclick="showAchievement('king')">
+            <img src="achievements/Amazing.png" alt="King">
+            <h2>King Award</h2>
+        </div>
+    </div>
+
+    <!-- Modal for Achievements (Hidden Initially) -->
+    <div id="achievement-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="achievement-image" src="" alt="Achievement Image" style="width: 300px; margin-bottom: 10px;">
+            <h2 id="achievement-title"></h2>
+            <p id="achievement-description"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
