@@ -8,7 +8,6 @@ body {
     overflow: hidden;
 }
 
-/* Progress Bar */
 .progress-container {
     position: fixed;
     top: 50%;
@@ -95,14 +94,12 @@ body {
     font-family: 'Poppins', sans-serif; 
 }
 
-/* Make the bold text (like "one year") stand out more */
 #main-content p strong {
     font-size: 1.4rem; 
     font-weight: 600;
     color: #ffcc00; 
 }
 
-/* Extra: Add subtle animation */
 @keyframes fadeInText {
     from {
         opacity: 0;
@@ -280,7 +277,7 @@ header {
 #achievement-title {
     font-size: 1.8rem;
     font-weight: bold;
-    color: #ffcc00; /* Gold color for importance */
+    color: #ffcc00; 
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     margin-bottom: 10px;
 }
@@ -311,7 +308,7 @@ header {
 #achievement-description em {
     display: block;
     font-size: 1rem;
-    color: #e9be4a; /* Soft red/pink for fun contrast */
+    color: #e9be4a; 
     font-style: italic;
     margin-top: 10px;
 }
