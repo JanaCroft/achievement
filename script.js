@@ -7,17 +7,17 @@ document.addEventListener("DOMContentLoaded", function () {
     let progress = 0;
 
     let interval = setInterval(function () {
-        // Ensuring a natural, smooth increase
-        progress += Math.random() * 2 + 1; // Adds between 1% - 3%
         
-        // Prevent overshooting
+        progress += Math.random() * 2 + 1; 
+        
+        
         if (progress > 100) progress = 100;
 
         progressBar.style.width = progress + "%";
 
         if (progress >= 100) {
             clearInterval(interval);
-            progressBar.style.width = "100%"; // Ensures it visually fills up completely
+            progressBar.style.width = "100%"; 
 
             setTimeout(() => {
                 loadingScreen.style.opacity = "0"; 
@@ -29,9 +29,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 }, 500);
             }, 500);
         }
-    }, 80); // Slow enough for smooth movement
+    }, 80); 
 
-    // Continue button action
+    
     document.getElementById("continue-btn").addEventListener("click", function () {
         mainContent.style.display = "none";
         letterSection.style.opacity = "1";
@@ -118,12 +118,12 @@ const achievements = {
     }
 };
 
-// Show achievement details in modal
+
 function showAchievement(key) {
     let modal = document.getElementById("achievement-modal");
     let modalContent = document.querySelector(".modal-content");
     
-    // Set modal title, description, and extra details
+    
     document.getElementById("achievement-title").textContent = achievements[key].title;
     
     let desc = achievements[key].description;
@@ -131,15 +131,15 @@ function showAchievement(key) {
 
     document.getElementById("achievement-description").innerHTML = desc + extraDesc;
     
-    // Get the correct image
+   
     let achievementImage = document.getElementById("achievement-image");
     achievementImage.src = document.querySelector(`[onclick="showAchievement('${key}')"] img`).src;
 
-    // Ensure the modal is displayed
+    
     modal.style.display = "flex"; 
 }
 
-// Close modal
+
 function closeModal() {
     document.getElementById("achievement-modal").style.display = "none";
 
@@ -153,14 +153,14 @@ function outsideClick(event) {
     let modal = document.getElementById("achievement-modal");
     let modalContent = document.querySelector(".modal-content");
 
-    // If the user clicks on the modal background (not the content), close it
+    
     if (event.target === modal) {
         closeModal();
-        window.removeEventListener("click", outsideClick); // Remove listener to prevent multiple bindings
+        window.removeEventListener("click", outsideClick);
     }
 }
 
-// Close modal on "Escape" key press
+
 window.addEventListener("keydown", function (event) {
     if (event.key === "Escape") {
         closeModal();
