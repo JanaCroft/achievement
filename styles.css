@@ -13,7 +13,7 @@ body.achievements-page {
 }
 
 
-/* Progress Bar */
+
 .progress-container {
     position: fixed;
     top: 50%;
@@ -43,7 +43,7 @@ body.achievements-page {
     margin-top: 200px;
 }
 
-/* Hide elements initially */
+
 #main-content, #letter-section {
     opacity: 0;
     transition: opacity 1s ease-in-out;
@@ -60,7 +60,6 @@ body.achievements-page {
     margin-bottom: 60px;
 }
 
-/* Glowing Animation */
 @keyframes glowEffect {
     0% {
         text-shadow: 0px 0px 10px rgba(255, 204, 0, 0.8);
@@ -100,14 +99,14 @@ body.achievements-page {
     font-family: 'Poppins', sans-serif; 
 }
 
-/* Make the bold text (like "one year") stand out more */
+
 #main-content p strong {
     font-size: 1.4rem; 
     font-weight: 600;
     color: #ffcc00; 
 }
 
-/* Extra: Add subtle animation */
+
 @keyframes fadeInText {
     from {
         opacity: 0;
@@ -144,13 +143,13 @@ body.achievements-page {
     margin-top: 60px;
 }
 
-/* Subtle Hover Animation */
+
 #continue-btn:hover {
     background: linear-gradient(45deg, #c59f23, #fce043);
     transform: scale(1.05);
 }
 
-/* Pulse Animation */
+
 @keyframes pulseEffect {
     from {
         box-shadow: 0px 0px 8px rgba(255, 187, 0, 0.4);
@@ -221,7 +220,7 @@ header {
     justify-content: center;
 }
 
-/* Individual Achievement Boxes */
+
 .achievement {
     background-color: #3a3a3a;
     padding: 20px;
@@ -242,20 +241,20 @@ header {
     transform: scale(1.05);
 }
 
-/* Achievement Images */
+
 .achievement img {
     width: 180px;
     height: auto;
     border-radius: 10px;
 }
 
-/* Achievement Titles */
+
 .achievement h2 {
     margin-top: 10px;
     font-weight: bold;
 }
 
-/* Modal Styles */
+
 .modal {
     display: none;
     position: fixed;
@@ -281,16 +280,15 @@ header {
     animation: fadeIn 0.3s ease-in-out;
 }
 
-/* Title Styling */
 #achievement-title {
     font-size: 1.8rem;
     font-weight: bold;
-    color: #ffcc00; /* Gold color for importance */
+    color: #ffcc00; 
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     margin-bottom: 10px;
 }
 
-/* Image Styling */
+
 #achievement-image {
     width: 150px;
     height: auto;
@@ -299,7 +297,7 @@ header {
     box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
 }
 
-/* Description Styling */
+
 #achievement-description {
     font-size: 1.2rem;
     line-height: 1.6;
@@ -312,11 +310,11 @@ header {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
-/* Extra Text Styling */
+
 #achievement-description em {
     display: block;
     font-size: 1rem;
-    color: #e9be4a; /* Soft red/pink for fun contrast */
+    color: #e9be4a; 
     font-style: italic;
     margin-top: 10px;
 }
