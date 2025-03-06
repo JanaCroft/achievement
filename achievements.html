@@ -6,7 +6,7 @@
     <title>Achievements Collection</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="achievements-page">
 
     <!-- Header -->
     <header>
@@ -22,7 +22,7 @@
         </div>
 
         <div class="achievement" onclick="showAchievement('spotify-master')">
-            <img src="achievements/Jany.png" alt="Banger Bestie">
+            <img src="achievements/jany.png" alt="Banger Bestie">
             <h2>Banger Bestie</h2>
         </div>
 
@@ -90,6 +90,31 @@
             <img src="achievements/Amazing.png" alt="King">
             <h2>King Award</h2>
         </div>
+
+        <div class="achievement" onclick="showAchievement('check-in')">
+            <img src="achievements/Good.png" alt="Check-in">
+            <h2>Daily Check-In</h2>
+        </div>
+        
+        <div class="achievement" onclick="showAchievement('poop-expert')">
+            <img src="achievements/poop.png" alt="Poop-Expert">
+            <h2>Poop Buddies</h2>
+        </div>
+
+        <div class="achievement" onclick="showAchievement('endless-convos')">
+            <img src="achievements/phone.png" alt="Endless-Convos">
+            <h2>Endless Convos</h2>
+        </div>
+
+        <div class="achievement" onclick="showAchievement('ow')">
+            <img src="achievements/ow.png" alt="OW">
+            <h2>Overwatch Duo</h2>
+        </div>
+
+        <div class="achievement" onclick="showAchievement('feet')">
+            <img src="achievements/feet.png" alt="Feet">
+            <h2>Toesday Worshiper</h2>
+        </div>
     </div>
 
     <!-- Modal for Achievements (Hidden Initially) -->
@@ -99,6 +124,14 @@
             <img id="achievement-image" src="" alt="Achievement Image" style="width: 300px; margin-bottom: 10px;">
             <h2 id="achievement-title"></h2>
             <p id="achievement-description"></p>
+        </div>
+    </div>
+
+    <div id="achievementPopup" class="popup">
+        <div class="popup-content">
+            <h2>🏆 New Achievement Unlocked!</h2>
+            <p>You've earned a new badge. Check your collection!</p>
+            <button onclick="closePopup()">OK</button>
         </div>
     </div>
 

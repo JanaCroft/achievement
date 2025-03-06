@@ -7,17 +7,17 @@ document.addEventListener("DOMContentLoaded", function () {
     let progress = 0;
 
     let interval = setInterval(function () {
+        // Ensuring a natural, smooth increase
+        progress += Math.random() * 2 + 1; // Adds between 1% - 3%
         
-        progress += Math.random() * 2 + 1; 
-        
-        
+        // Prevent overshooting
         if (progress > 100) progress = 100;
 
         progressBar.style.width = progress + "%";
 
         if (progress >= 100) {
             clearInterval(interval);
-            progressBar.style.width = "100%"; 
+            progressBar.style.width = "100%"; // Ensures it visually fills up completely
 
             setTimeout(() => {
                 loadingScreen.style.opacity = "0"; 
@@ -29,9 +29,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 }, 500);
             }, 500);
         }
-    }, 80); 
+    }, 80); // Slow enough for smooth movement
 
-    
+    // Continue button action
     document.getElementById("continue-btn").addEventListener("click", function () {
         mainContent.style.display = "none";
         letterSection.style.opacity = "1";
@@ -115,15 +115,40 @@ const achievements = {
         title: "King Award 👑",
         description: "For simply being you—a legend, a masterpiece, a once-in-a-lifetime phenomenon. Thy greatness is immeasurable, thy presence? a gift.",
         extra: "Don't worry, I consider myself more than lucky!"
-    }
+    },
+    "check-in": {
+        title: "Daily Check-In ☀️🌙",
+        description: "For always greeting each other with a 'Good morning' and 'Goodnight' like a true tradition.",
+        extra: "Consistency is key, even in sleepy messages!"
+    },
+    "poop-expert": {
+        title: "Poop Buddies 💩⭐",
+        description: "For making sure I'm included in every aspect of your life, even your pooping habits.",
+        extra: "Is it weird that this makes me feel special?"
+    },
+    "endless-convos": {
+        title: "Endless Conversations 📱💬",
+        description: "We both know we’ll regret it in the morning, but here we are—laughing, talking, sending ‘one last message’ for the tenth time. Who needs sleep when the conversation is this good?",
+        extra: "I gladly 'suffer' after this."
+    },
+    "ow": {
+        title: "Overwatch Duo 🎮",
+        description: "Blizzard may have abandoned us, but at least we still have each other. OW2 may be pain, but at least it’s shared pain.",
+        extra: "The game that started it all."
+    },
+    "feet": {
+        title: "Toesday Worshiper 🦶🏻",
+        description: "The love you have for my feet is one I have never experienced before—granting you the title of true devotion.",
+        extra: "Everyday is Toesday when you're around."
+    },
 };
 
-
+// Show achievement details in modal
 function showAchievement(key) {
     let modal = document.getElementById("achievement-modal");
     let modalContent = document.querySelector(".modal-content");
     
-    
+    // Set modal title, description, and extra details
     document.getElementById("achievement-title").textContent = achievements[key].title;
     
     let desc = achievements[key].description;
@@ -131,15 +156,15 @@ function showAchievement(key) {
 
     document.getElementById("achievement-description").innerHTML = desc + extraDesc;
     
-   
+    // Get the correct image
     let achievementImage = document.getElementById("achievement-image");
     achievementImage.src = document.querySelector(`[onclick="showAchievement('${key}')"] img`).src;
 
-    
+    // Ensure the modal is displayed
     modal.style.display = "flex"; 
 }
 
-
+// Close modal
 function closeModal() {
     document.getElementById("achievement-modal").style.display = "none";
 
@@ -153,17 +178,28 @@ function outsideClick(event) {
     let modal = document.getElementById("achievement-modal");
     let modalContent = document.querySelector(".modal-content");
 
-    
+    // If the user clicks on the modal background (not the content), close it
     if (event.target === modal) {
         closeModal();
-        window.removeEventListener("click", outsideClick);
+        window.removeEventListener("click", outsideClick); // Remove listener to prevent multiple bindings
     }
 }
 
-
+// Close modal on "Escape" key press
 window.addEventListener("keydown", function (event) {
     if (event.key === "Escape") {
         closeModal();
         window.removeEventListener("click", outsideClick);
     }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    if (!localStorage.getItem("achievementUnlocked")) {
+        document.getElementById("achievementPopup").style.display = "block";
+    }
+});
+
+function closePopup() {
+    document.getElementById("achievementPopup").style.display = "none";
+    localStorage.setItem("achievementUnlocked", "true");
+}

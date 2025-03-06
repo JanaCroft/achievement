@@ -8,6 +8,12 @@ body {
     overflow: hidden;
 }
 
+body.achievements-page {
+    overflow: auto;
+}
+
+
+/* Progress Bar */
 .progress-container {
     position: fixed;
     top: 50%;
@@ -94,12 +100,14 @@ body {
     font-family: 'Poppins', sans-serif; 
 }
 
+/* Make the bold text (like "one year") stand out more */
 #main-content p strong {
     font-size: 1.4rem; 
     font-weight: 600;
     color: #ffcc00; 
 }
 
+/* Extra: Add subtle animation */
 @keyframes fadeInText {
     from {
         opacity: 0;
@@ -277,7 +285,7 @@ header {
 #achievement-title {
     font-size: 1.8rem;
     font-weight: bold;
-    color: #ffcc00; 
+    color: #ffcc00; /* Gold color for importance */
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     margin-bottom: 10px;
 }
@@ -308,7 +316,7 @@ header {
 #achievement-description em {
     display: block;
     font-size: 1rem;
-    color: #e9be4a; 
+    color: #e9be4a; /* Soft red/pink for fun contrast */
     font-style: italic;
     margin-top: 10px;
 }
@@ -413,4 +421,35 @@ h2{
 
 #view-achievements:hover {
     transform: scale(1.05);
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #222;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+    display: none;
+    z-index: 1000;
+    text-align: center;
+}
+
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.popup button {
+    background: gold;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
 }
